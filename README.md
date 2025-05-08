@@ -1,7 +1,7 @@
 # 1. What are some differences between interfaces and types in TypeScript?
 ## There are two ways to define the shape of objects in typescript, i.e 
-    1. `type`
-    2. `interface`
+    1. type
+    2. interface
 
 **Although we can mix type and interface, there are some differences that are to be described:** 
 
