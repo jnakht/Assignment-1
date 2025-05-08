@@ -196,7 +196,7 @@ type VehicleProperties = {
 
 
 
-# 3. Difference between any, unknown, and never types in TypeScript.
+# 3. Difference between `any`, `unknown`, and `never` types in TypeScript.
  ## 1. `any`
  While using `any` type, typescript disables all type-checking and allows user to perform any operations on the value.
 
@@ -227,7 +227,8 @@ type VehicleProperties = {
 
 
 
- ## 3. The never type represents value that never occurs
+ ## 3. `never`
+  The never type represents value that never occurs
    1. A function that throws an error never returns anything: 
    ```ts
    function throwError (): never {
