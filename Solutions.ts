@@ -19,10 +19,13 @@ function filterByRating(items: {title: string; rating: number}[]): {title: strin
 
 // problem 3 start
 
-
-
-
-
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+    let singleArr: T[] = [];
+    arrays.map(arr => {
+        singleArr.push(...arr);
+    })
+    return singleArr;
+} 
 
 
 // problem 3 end
@@ -52,8 +55,7 @@ class Car extends Vehicle {
     }
 }
 const myCar = new Car("Toyota", 2020, "Corolla");
-// myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
-// myCar.getModel();  // Output: "Model: Corolla"
+
 
 // problem 4 end
 
