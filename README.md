@@ -125,3 +125,71 @@ but interfaces cannot be used with primitives:
 ```ts 
 interface ID = string | number; // error
 ```
+
+
+
+
+# 2. What is the use of the `keyof` keyword in TypeScript? 
+## The `keyof` keyword allows developers to create types based on the keys of an object.
+
+**Example:** 
+```ts
+type User = {
+    id: 1, 
+    name: 'Nahid Hasan',
+    age: 25
+}
+type UserKeys = keyof User;
+```
+
+In this example, `keyof` `User` generates union types of all keys in User.
+
+```ts
+type UserKeys = 'id' | 'name' | 'age';
+```
+
+The `keyof` keyword is also used to dynamically access properties of `objects`.
+
+**Example:**
+```ts
+Type Product = {
+    id: number;
+    name: string;
+    price: number;
+}
+const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
+    return obj[key];
+}
+
+const product1: Product = {
+    id: 1, 
+    name: 'Laptop',
+    price: 1500,
+}
+const product1Name = getProperty(product1, 'name');
+console.log(productName); // Output: Laptop
+```
+
+
+Also, `keyof` is used to if `map` over the keys of a type to create new types.
+
+**Example:** 
+```ts
+type Vehicle = {
+    brand: string;
+    model: string;
+    year: number;
+}
+type VehicleProperties = {
+    [K in keyof Vehicle]: string;
+}
+```
+
+This will result in,
+```ts
+type VehicleProperties = {
+    brand: string;
+    model: string;
+    year: string;
+}
+```
