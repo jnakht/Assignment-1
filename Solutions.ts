@@ -17,7 +17,7 @@ function filterByRating(items: {title: string; rating: number}[]): {title: strin
 }
 
 
-// problem 3 start
+
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     let singleArr: T[] = [];
@@ -28,11 +28,11 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 } 
 
 
-// problem 3 end
 
 
 
-//problem 4 start
+
+
 class Vehicle {
     private make: string;
     private year: number;
@@ -57,11 +57,11 @@ class Car extends Vehicle {
 const myCar = new Car("Toyota", 2020, "Corolla");
 
 
-// problem 4 end
 
 
 
-// problem 5 start
+
+
 
 function processValue(value: string | number): number {
     if (typeof value === 'string') {
@@ -73,16 +73,15 @@ function processValue(value: string | number): number {
     }  
 }
 
-// problem 5 end
 
 
-// problem 6 start
+
+
 
 interface Product {
     name: string;
     price: number;
 }
-
 function getMostExpensiveProduct(products: Product[]): Product | null {
     if (products.length === 0) {
         return null;
@@ -98,21 +97,34 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 }
 
 
-// problem 6 end 
-
-
-
-// problem 7 start 
+ 
 
 
 
 
+enum Day {
+    Monday, 
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+function getDayType(day: Day):string {
+    if(day === Day.Sunday) {
+        return 'Weekend';
+    } else {
+        return 'Weekday';
+    }
+}
 
-// problem 7 end
 
 
 
-// problem 8 start 
+
+
+
 
 async function squareAsync(n: number): Promise<number> {
     return new Promise((resolve, reject) => {
@@ -127,6 +139,6 @@ async function squareAsync(n: number): Promise<number> {
 }
 
 
-// problem 8 end
+
 
 
