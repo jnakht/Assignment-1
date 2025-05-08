@@ -193,3 +193,53 @@ type VehicleProperties = {
     year: string;
 }
 ```
+
+
+
+# 3. Difference between any, unknown, and never types in TypeScript.
+ ## 1. `any`
+ While using `any` type, typescript disables all type-checking and allows user to perform any operations on the value.
+
+ **Example:** 
+ ```ts
+ let anyValue: any = "Nahid Hasan";
+ anyValue = 55; //no error
+ anyValue = true; //no error
+
+ anyValue.toUpperCase(); //no error
+ anyValue(); //no error
+ anyValue.someProperty(); //no error
+ ```
+
+ ## 2. `unknown`
+ The `unknown` type is similar to `any` in that any value can be assigned to it, but it enforces type-checking before user can use it. You can't access properties or call methods on an `unknown` value without first narrowing it's type.
+
+ ```ts
+ let unknownValue: unknown;
+ unknownValue = 'Nahid Hasan';
+ unknownValue = 34;
+ if (typeof unknownValue === 'string') {
+    console.log(unknownValue.toUpperCase()); // no error
+ }
+
+ unknownValue.toUpperCase(); //error: it is unsure about the type
+ ```
+
+
+
+ ## 3. The never type represents value that never occurs
+   1. A function that throws an error never returns anything: 
+   ```ts
+   function throwError (): never {
+        throw new Error('Custom Error');
+   }
+   ```
+   
+   2. An infinite loops never returns anything:
+   ```ts
+   function infiniteLoop(): never {
+        while(true) {
+            console.log('Running Forever...');
+        }
+   }
+   ```
