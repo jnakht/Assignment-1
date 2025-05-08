@@ -109,3 +109,22 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 // problem 7 end
 
 
+
+// problem 8 start 
+
+async function squareAsync(n: number): Promise<number> {
+    return new Promise((resolve, reject) => {
+        if (n >= 0) {
+            setInterval(() => {
+                resolve(n * n);
+            }, 1000)
+        } else if (n < 0) {
+            reject("Error: Negative number not allowed");
+        }
+    })
+}
+
+
+// problem 8 end
+
+
